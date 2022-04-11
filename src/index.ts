@@ -1,4 +1,4 @@
-import { Application, Sprite } from 'pixi.js'
+import { Application, Sprite, Loader, Texture, AnimatedSprite } from 'pixi.js'
 import { TweenMax } from "gsap";
 const app = new Application({
 	view: document.getElementById("pixi-canvas") as HTMLCanvasElement,
@@ -21,7 +21,38 @@ clampy.y = app.screen.height / 2;
 
 
 
-app.stage.addChild(clampy);
+//app.stage.addChild(clampy);
+
+
+Loader.shared.add("spritesheet.json").load(setup);
+
+
+// console.log("zzzzzzzzz")
+// console.log(Loader.shared.resources["spritesheet.json"].data); 
+
+function setup(){
+	let sheet = Loader.shared.resources["spritesheet.json"].textures;
+    const knites = new Sprite(sheet["knites_1.png"]); 
+	app.stage.addChild(knites);
+
+	let spriteSheet = Loader.shared.resources["spritesheet.json"].spritesheet;
+	let wDownAnim = new AnimatedSprite(spriteSheet.animations["walkDown"]);
+	wDownAnim.x = app.screen.width / 2;
+	wDownAnim.y = app.screen.width / 2;
+	wDownAnim.animationSpeed = 0.1; 
+	wDownAnim.play();
+	app.stage.addChild(wDownAnim);
+	// const knightUpTexture = Texture.from("knites_1.png");
+	// const knightUpSprite = new Sprite(knightUpTexture );
+
+	// knightUpSprite.width= 60;
+	// knightUpSprite.height= 60;
+	// knightUpSprite.x = app.screen.width / 2;
+	// knightUpSprite.y = app.screen.height / 2;
+
+	// app.stage.addChild(knightUpSprite)
+};
+
 
 // app.ticker.add(gameLoop);
 // app.ticker.add(animate)

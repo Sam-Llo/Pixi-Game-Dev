@@ -26,14 +26,14 @@ clampy.y = app.screen.height / 2;
 
 Loader.shared.add("spritesheet.json").load(setup);
 
-
 // console.log("zzzzzzzzz")
 // console.log(Loader.shared.resources["spritesheet.json"].data); 
 
 function setup(){
-	let sheet = Loader.shared.resources["spritesheet.json"].textures;
-    const knites = new Sprite(sheet["knites_1.png"]); 
-	app.stage.addChild(knites);
+	let spriteSheet = Loader.shared.resources["spritesheet.json"].spritesheet;
+	createPlayer();
+    // const knites = new Sprite(sheet["knites_1.png"]); 
+	// app.stage.addChild(knites);
 
 	let spriteSheet = Loader.shared.resources["spritesheet.json"].spritesheet;
 	let wDownAnim = new AnimatedSprite(spriteSheet.animations["walkDown"]);
@@ -42,6 +42,8 @@ function setup(){
 	wDownAnim.animationSpeed = 0.1; 
 	wDownAnim.play();
 	app.stage.addChild(wDownAnim);
+
+	
 	// const knightUpTexture = Texture.from("knites_1.png");
 	// const knightUpSprite = new Sprite(knightUpTexture );
 
@@ -53,6 +55,9 @@ function setup(){
 	// app.stage.addChild(knightUpSprite)
 };
 
+function createPlayer(){
+	
+}
 
 // app.ticker.add(gameLoop);
 // app.ticker.add(animate)

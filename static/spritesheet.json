@@ -242,7 +242,14 @@
 		}
 	},
 	"animations": {
-		"walkDown": ["knites_1.png","knites_2.png","knites_3.png"]
+		"walkDown": ["knites_1.png","knites_2.png","knites_3.png"],
+		"walkLeft": ["knites_4.png","knites_5.png","knites_15.png"],
+		"walkRight": ["knites_25.png","knites_26.png","knites_27.png"],
+		"walkUp": ["knites_37.png","knites_38.png","knites_39.png"],
+		"standDown": ["knites_2.png"],
+		"standLeft": ["knites_5.png"],
+		"standRight": ["knites_26.png"],
+		"standUp": ["knites_38.png"]
 	},
 	"meta": {
 		"app": "http://www.codeandweb.com/texturepacker",
